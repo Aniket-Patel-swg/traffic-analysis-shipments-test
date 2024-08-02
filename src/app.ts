@@ -1,3 +1,8 @@
+import { LocationController } from "./controller/Location.controller";
+import { PathfindingController } from "./controller/PathFinder.controller";
+import { RoadController } from "./controller/Road.controller";
+import { TrafficUpdateController } from "./controller/TrafficUpdate.controller";
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
@@ -12,21 +17,10 @@ app.use(express.static('public'));
 
 app.use(cookieParser());
 
+app.post('/locations', LocationController.addLocation);
 
-// import express from 'express';
-// import { LocationController, RoadController, TrafficUpdateController, PathfindingController, ReportController } from './controllers';
+app.post('/roads', RoadController.addRoad);
 
-// const app = express();
-// app.use(express.json());
+app.post('/traffic-updates', TrafficUpdateController.updateTraffic);
 
-// app.post('/locations', LocationController.addLocation);
-// app.post('/roads', RoadController.addRoad);
-// app.post('/traffic-updates', TrafficUpdateController.updateTraffic);
-// app.get('/shortest-path', PathfindingController.getShortestPath);
-// app.get('/roads/:id/traffic-condition', RoadController.getTrafficCondition);
-// app.get('/report/traffic', ReportController.generateTrafficReport);
-
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`);
-// });
+app.get('/shortest-path', PathfindingController.getShortestPath);

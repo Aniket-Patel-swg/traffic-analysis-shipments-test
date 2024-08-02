@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { TrafficUpdate } from '../model/TrafficUpdate.model';
-import { ControllerException } from '../exceptions/exception';
+import { ControllerException } from '../utils/exceptions/exception';
 import { ITrafficUpdate } from '../model/interfaces/TrafficUpdate.interface';
 
 export class TrafficUpdateController {
@@ -9,7 +9,7 @@ export class TrafficUpdateController {
             const { road_id, timestamp, traffic_condition } = req.body;
             const trafficUpdate: ITrafficUpdate = new TrafficUpdate({ road_id, timestamp, traffic_condition });
             await trafficUpdate.save();
-            res.status(201).json(trafficUpdate);
+            res.status(201).json("Created");
         } catch (error) {
             throw new ControllerException("error updating traffic", 500);
         }
