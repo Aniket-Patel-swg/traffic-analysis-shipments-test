@@ -2,13 +2,14 @@
 import { Request, Response } from 'express';
 import { Road } from '../model/Road.model';
 import { TrafficUpdate } from '../model/TrafficUpdate.model';
-import { ControllerException } from '../exceptions/Controller.exception';
+import { ControllerException } from '../exceptions/exception';
+import { IRoad } from '../model/interfaces/Road.interface';
 
 export class RoadController {
     static async addRoad(req: Request, res: Response) {
         try {
             const { start_location_id, end_location_id, distance, traffic_condition } = req.body;
-            const road = new Road({ start_location_id, end_location_id, distance, traffic_condition });
+            const road: IRoad = new Road({ start_location_id, end_location_id, distance, traffic_condition });
             await road.save();
             res.status(201).json(road);
         } catch (error) {
