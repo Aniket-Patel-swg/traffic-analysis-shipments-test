@@ -31,4 +31,5 @@ export class PathfindingController {
             throw new ControllerException("error getting shortest path", 500);
         }
     }
+
 }
