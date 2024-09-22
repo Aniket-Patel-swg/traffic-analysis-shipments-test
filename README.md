@@ -1,2 +1,36 @@
-postman collection: 
-[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/25703225-8f830380-6192-4044-be82-393e8dda0947?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D25703225-8f830380-6192-4044-be82-393e8dda0947%26entityType%3Dcollection%26workspaceId%3Dde326eee-dd12-4248-8dad-40bb8dd316ba)
+# Quiz API
+
+This project is a Quiz API designed for generating, evaluating, and managing quizzes. It is built using **Express.js**, **Node.js**, **TypeScript**, **MongoDB**, and deployed on **AWS EC2**. The API supports user authentication, quiz management, and AI integration to generate hints and explanations.
+
+## Technologies Used
+
+- **Node.js**
+- **Express.js**
+- **TypeScript**
+- **MongoDB**
+- **AWS EC2** (for deployment)
+- **AI Integration** (for generating questions, hints, and explanations)
+
+## Features
+
+- **User Authentication**: Sign up and login with JWT-based token authentication.
+- **Quiz Generation**: AI-driven quiz creation based on specified subjects.
+- **Quiz Evaluation**: Submit and evaluate answers, with retesting options.
+- **AI-Powered Hints & Explanations**: Get AI-generated hints and explanations for quiz questions.
+- **Quiz History**: Fetch quiz history and filter results by subject and date.
+
+## API Overview
+
+### Authentication Endpoints
+
+#### `/signup`
+
+- **Method**: `POST`
+- **Description**: Endpoint for new users to register.
+- **Request Body**:
+  ```json
+  {
+      "username": "string",
+      "email": "string",
+      "password": "string"
+  }
