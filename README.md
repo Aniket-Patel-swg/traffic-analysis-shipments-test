@@ -3,7 +3,7 @@
 This project is a Quiz API designed for generating, evaluating, and managing quizzes. It is built using **Express.js**, **Node.js**, **TypeScript**, **MongoDB**, and deployed on **AWS EC2**. The API supports user authentication, quiz management, and AI integration to generate hints and explanations.
 
 ## Postman API Collection
-You can test the API using Postman. Here's the [https://www.postman.com/science-physicist-66853210/quizzer-ai/collection/rcpce7x/quizzer-ai-api-s?action=share&creator=25703225](https://www.postman.com/your-collection-link).
+You can test the API using Postman. Here's the [Postman Collection Link]([https://www.postman.com/your-collection-link](https://www.postman.com/science-physicist-66853210/quizzer-ai/collection/rcpce7x/quizzer-ai-api-s?action=share&creator=25703225)).
 
 ## Technologies Used
 
