@@ -186,17 +186,18 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 - **Utils**: Provides helper functions such as LLM integration, request validation, and custom error handling.
 
 
---**Basic Flow diagram**:
-![diagram-export-9-22-2024-4_45_41-PM](https://github.com/user-attachments/assets/fc922003-d1fb-4e7a-95aa-da2910983740)
+- **Basic Flow diagram**:
+  ![diagram-export-9-22-2024-8_42_40-PM](https://github.com/user-attachments/assets/32b65a63-b158-48f2-babe-f6f17c47520d)
+
 
 ## Mongoose Schema
-![diagram-export-9-22-2024-4_45_30-PM](https://github.com/user-attachments/assets/a0861fc4-4ef4-4b3c-ac8c-9d2e845784a2)
+![diagram-export-9-22-2024-8_42_45-PM](https://github.com/user-attachments/assets/47339c49-671b-4768-b4e5-48e9956357ee)
+
 
 ## Basic API working flow:
-![diagram-export-9-22-2024-5_09_18-PM](https://github.com/user-attachments/assets/85b1e618-94ca-47e3-9253-97a584ce2d79)
+![diagram-export-9-22-2024-8_42_52-PM](https://github.com/user-attachments/assets/13e953a8-d78c-4c0c-b849-25e594de0d19)
 
 ## Deployment
 
 The API is deployed on **AWS EC2** for scalability and availability. **MongoDB** is used as the database to store quiz and user-related data.
 
-## How to run locally
