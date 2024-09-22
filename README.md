@@ -2,6 +2,9 @@
 ### Submitted by Aniket Patel (patelaniket1207@gmail.com)
 This project is a Quiz API designed for generating, evaluating, and managing quizzes. It is built using **Express.js**, **Node.js**, **TypeScript**, **MongoDB**, and deployed on **AWS EC2**. The API supports user authentication, quiz management, and AI integration to generate hints and explanations.
 
+## Postman API Collection
+You can test the API using Postman. Here's the [https://www.postman.com/science-physicist-66853210/quizzer-ai/collection/rcpce7x/quizzer-ai-api-s?action=share&creator=25703225](https://www.postman.com/your-collection-link).
+
 ## Technologies Used
 
 - **Node.js**
@@ -174,6 +177,26 @@ This project is a Quiz API designed for generating, evaluating, and managing qui
 - **Quiz Subject Validation**: `/quiz/generate` uses AI to validate the subject.
 - **AI Hints and Explanations**: `/quiz/getHintAI` and `/quiz/getExplanationFromAI` use AI to generate hints and explanations for quiz questions.
 
+## Architecture Used
+
+- **Model**: Defines the data structure and schema for quiz and user data in MongoDB.
+- **Service**: Handles the business logic and orchestration, such as AI validation and quiz generation.
+- **Routes**: Directs API requests to the appropriate controller based on the route.
+- **Controllers**: Manages request processing, validation, and invoking service methods.
+- **Utils**: Provides helper functions such as LLM integration, request validation, and custom error handling.
+
+
+--**Basic Flow diagram**:
+![diagram-export-9-22-2024-4_45_41-PM](https://github.com/user-attachments/assets/fc922003-d1fb-4e7a-95aa-da2910983740)
+
+## Mongoose Schema
+![diagram-export-9-22-2024-4_45_30-PM](https://github.com/user-attachments/assets/a0861fc4-4ef4-4b3c-ac8c-9d2e845784a2)
+
+## Basic API working flow:
+![diagram-export-9-22-2024-5_09_18-PM](https://github.com/user-attachments/assets/85b1e618-94ca-47e3-9253-97a584ce2d79)
+
 ## Deployment
 
 The API is deployed on **AWS EC2** for scalability and availability. **MongoDB** is used as the database to store quiz and user-related data.
+
+## How to run locally
