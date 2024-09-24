@@ -26,7 +26,7 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 
 ### Authentication Endpoints
 
-#### `/signup`
+#### `/auth/signup`
 
 - **Method**: `POST`
 - **Description**: Endpoint for new users to register.
@@ -43,10 +43,10 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
   {
     "message": "Sign up successful, please login using /auth/login",
     "status": 200
-}
-  ```  
+  }
+  ```
 
-#### `/login`
+#### `/auth/login`
 
 - **Method**: `POST`
 - **Description**: Endpoint for users to log in and receive a JWT token.
@@ -76,9 +76,12 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 - **Request Body**:
 
     ```json
-    {
-        "subject": "string",
-        "numberOfQuestions": "integer"
+   {
+      "grade": "Collage Student",
+      "Subject": "Javascript Engine",
+      "TotalQuestions": 5,
+      "MaxScore": 35,
+      "Difficulty": "EASY"
     }
     ```
 
@@ -89,12 +92,15 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 - **Request Body**:
 
     ```json
-    {
-        "quizId": "string",
-        "answers": [
-            { "questionId": "string", "answer": "string" }
-        ]
-    }
+   {
+    "quizId": "Quiz ID",
+    "responses": [
+        {
+            "questionId": "QuestionID",
+            "userResponse": "User Reponse"
+        },
+    ]
+  }
     ```
 
 #### `/quiz/retest`
@@ -103,10 +109,15 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 - **Description**: Retest the user with previously generated quiz questions.
 - **Request Body**:
 
-    ```json
-    {
-        "quizId": "string"
-    }
+  {
+    "quizId": "Quiz ID",
+    "responses": [
+        {
+            "questionId": "QuestionID",
+            "userResponse": "User Reponse"
+        },
+    ]
+  }
     ```
 
 #### `/quiz/hint`
@@ -117,7 +128,6 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 
     ```json
     {
-        "quizId": "string",
         "questionId": "string"
     }
     ```
@@ -130,7 +140,6 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 
     ```json
     {
-        "quizId": "string",
         "questionId": "string"
     }
     ```
@@ -143,7 +152,6 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 
     ```json
     {
-        "quizId": "string",
         "questionId": "string"
     }
     ```
@@ -156,7 +164,6 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 
     ```json
     {
-        "quizId": "string",
         "questionId": "string"
     }
     ```
@@ -167,16 +174,19 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
 - **Description**: Fetch quiz history for a user. You can filter by subject and date range.
 - **Query Parameters (optional)**:
 
-    ```json
+    ```
     {
-        "subject": "string",
-        "dateRange": "string"
+       ?subject=Artificial Intelligence,
+        ?score=3,
+        ?difficulty=EASY,
+    startDate=2024-09-22T12:04:18.845Z&endDate=2024-09-22T12:04:18.845Z,
+    grade=Collage Student,
     }
     ```
 
 ## Authentication and Authorization
 
-- **Signup & Login**: Users must register via `/signup` and log in using `/login` to obtain a JWT token.
+- **Signup & Login**: Users must register via `auth/signup` and log in using `auth/login` to obtain a JWT token.
 - **Token Validation**: A valid token is required for all quiz-related APIs except `/quiz/generate`.
 
 ## AI-Powered Features
