@@ -34,10 +34,17 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
   ```json
   {
       "username": "string",
-      "email": "string",
       "password": "string"
   }
+  ```
 
+- **Success Response Body**:
+  ```json
+  {
+    "message": "Sign up successful, please login using /auth/login",
+    "status": 200
+}
+  ```  
 
 #### `/login`
 
