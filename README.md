@@ -119,7 +119,7 @@ You can test the API using Postman. Here's the [Postman Collection Link](https:/
         },
     ]
   }
-    ```
+```
 
 #### `/quiz/hint`
 
